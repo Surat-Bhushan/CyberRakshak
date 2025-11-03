@@ -6,9 +6,9 @@ let feedbackText, endScreen, restartBtn;
 let playPauseBtn, stopBtn, volumeBtn, volumeSlider;
 
 // Audio Elements
-let startSound, rightSound, wrongSound, endingSound, questionSound, clickSound;
+let startSound, rightSound, wrongSound, endingSound, questionSound, clickSound, messageSound;
 
-// Game Data - REORDERED: Lottery last, Gov second last
+// Game Data - Added Digital Arrest at position 2
 const scenarios = [
   { 
     title: "ओटीपी कॉल", 
@@ -18,9 +18,16 @@ const scenarios = [
     description: "इस परिदृश्य में, कोई व्यक्ति आपसे ओटीपी मांग रहा है। आपको यह तय करना है कि क्या ओटीपी साझा करना सुरक्षित है।"
   },
   { 
+    title: "डिजिटल गिरफ्तारी", 
+    video: "assets/videos/digital.mp4", 
+    questionTime: 16, 
+    correctAnswer: "no",
+    description: "इस परिदृश्य में, कोई व्यक्ति खुद को साइबर क्राइम विभाग का बताकर डिजिटल गिरफ्तारी की धमकी दे रहा है। आपको सही निर्णय लेना है।"
+  },
+  { 
     title: "आधार लिंक कॉल", 
     video: "assets/videos/aadhar.mp4", 
-    questionTime: 19, 
+    questionTime: 13, 
     correctAnswer: "no",
     description: "इस परिदृश्य में, कोई व्यक्ति आपके आधार कार्ड को लिंक करने का दावा कर रहा है। आपको सही निर्णय लेना है।"
   },
@@ -103,6 +110,7 @@ function initializeDOMElements() {
   endingSound = document.getElementById("ending-sound");
   questionSound = document.getElementById("question-sound");
   clickSound = document.getElementById("click-sound");
+  messageSound = document.getElementById("message-sound");
 
   // Video control elements
   playPauseBtn = document.querySelector('.play-pause-btn');
@@ -233,6 +241,11 @@ function showScenarioIntro() {
   const scene = scenarios[currentScenario];
   introTitle.textContent = scene.title;
   introDescription.textContent = scene.description;
+  
+  // Play message sound for all scenario intros except the first one
+  if (currentScenario > 0) {
+    playSound(messageSound);
+  }
   
   // Ensure video is paused and reset
   video.pause();
@@ -623,4 +636,7 @@ function resetGame() {
 }
 
 // Initialize the game when the DOM is loaded
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("DOM fully loaded and parsed");
+  init();
+});
