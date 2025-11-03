@@ -70,6 +70,49 @@ html, body {
   max-width: 100%;
 }
 
+/* Scenarios List */
+.scenarios-list {
+  background: rgba(0, 20, 60, 0.7);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #00f7ff33;
+  width: 100%;
+  max-width: 600px;
+  margin: 1rem 0;
+}
+
+.scenarios-list h3 {
+  color: #00f7ff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+.scenarios-list ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.5rem;
+}
+
+.scenarios-list li {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 247, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid #00f7ff33;
+  text-align: left;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.scenarios-list li:before {
+  content: "🛡️";
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .btn-primary {
   background: linear-gradient(90deg, #00f7ff, #0077b6);
   color: #001233;
@@ -162,6 +205,7 @@ html, body {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .header-btn {
@@ -187,6 +231,37 @@ html, body {
 .header-btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+}
+
+/* Scenario Dropdown */
+.scenario-dropdown {
+  position: relative;
+}
+
+.scenario-select {
+  background: rgba(0, 247, 255, 0.1);
+  color: #00f7ff;
+  border: 1px solid #00f7ff33;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  min-width: 150px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2300f7ff' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+.scenario-select:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00f7ff33;
+}
+
+.scenario-select option {
+  background: #001233;
+  color: #e0f2fe;
 }
 
 /* Scenario Intro Styling */
@@ -659,8 +734,19 @@ html, body {
     min-width: 180px;
   }
   
+  .scenario-select {
+    min-width: 120px;
+    font-size: 0.7rem;
+    padding: 6px 8px;
+    padding-right: 25px;
+  }
+  
   #game-container {
-    padding-top: 80px;
+    padding-top: 90px;
+  }
+  
+  .scenarios-list ul {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -755,5 +841,10 @@ html, body {
   .option-btn {
     font-size: 0.9rem;
     padding: 10px;
+  }
+  
+  .scenario-select {
+    min-width: 100px;
+    font-size: 0.65rem;
   }
 }
