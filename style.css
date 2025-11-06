@@ -848,3 +848,34 @@ html, body {
     font-size: 0.65rem;
   }
 }
+/* App Home Button Styles */
+.app-home-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 247, 255, 0.1);
+    color: #00f7ff;
+    border: 1px solid #00f7ff33;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.app-home-btn:hover {
+    background: rgba(0, 247, 255, 0.2);
+    box-shadow: 0 0 10px #00f7ff33;
+}
+
+/* Make sure screens have relative positioning for absolute button positioning */
+.screen {
+    position: relative;
+}
+/* Ensure end screen content is properly positioned */
+#end-screen .end-content {
+    position: relative;
+    z-index: 1;
+}
