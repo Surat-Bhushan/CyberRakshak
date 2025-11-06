@@ -10,6 +10,10 @@
 <body>
   <!-- Start Screen -->
   <div id="start-screen" class="screen">
+    <button class="app-home-btn" onclick="window.location.href='https://surakshanet-2025.web.app/'">
+        ऐप होम पर जाएं
+    </button>
+    
     <div class="start-content">
       <div class="game-logo">🛡️</div>
       <h1 class="game-title">साइबर रक्षक</h1>
@@ -133,18 +137,23 @@
   </div>
 
   <!-- End Game Screen -->
-  <div id="end-screen" class="screen hidden">
+<div id="end-screen" class="screen hidden">
+    <!-- ADD THE APP HOME BUTTON HERE -->
+    <button class="app-home-btn" onclick="window.location.href='https://surakshanet-2025.web.app/'">
+        ऐप होम पर जाएं
+    </button>
+    
     <div class="end-content">
-      <h1 class="end-title">🎉 बधाई हो! 🎉</h1>
-      <p class="end-message">
-        आपने सभी परिदृश्य सफलतापूर्वक पूरे कर लिए हैं! आप एक सच्चे साइबर रक्षक बन गए हैं। 
-        अब आप साइबर धोखाधड़ी के विभिन्न तरीकों को पहचान सकते हैं और उनसे बच सकते हैं।
-      </p>
-      <button id="restart-btn" class="btn-primary">
-        <i class="fas fa-redo"></i> फिर से खेलें
-      </button>
+        <h1 class="end-title">🎉 बधाई हो! 🎉</h1>
+        <p class="end-message">
+            आपने सभी परिदृश्य सफलतापूर्वक पूरे कर लिए हैं! आप एक सच्चे साइबर रक्षक बन गए हैं। 
+            अब आप साइबर धोखाधड़ी के विभिन्न तरीकों को पहचान सकते हैं और उनसे बच सकते हैं।
+        </p>
+        <button id="restart-btn" class="btn-primary">
+            <i class="fas fa-redo"></i> फिर से खेलें
+        </button>
     </div>
-  </div>
+</div>
 
   <!-- Audio Elements -->
   <audio id="start-sound" src="assets/audio/start.mp3"></audio>
